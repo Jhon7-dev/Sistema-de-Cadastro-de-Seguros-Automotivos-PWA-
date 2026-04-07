@@ -1,0 +1,82 @@
+<div class="ui card main-form" style="width: 100%; margin-top: 20px;">
+  <div class="content">
+    <h1 class="header">Cadastrar Seguro</h1>
+  </div>
+  
+  <div class="content">
+    <form class="ui large form equal width stackable grid">
+
+      <div class="column row">
+        <div class="column">
+          <h3 class="ui dividing header">Dados do Carro</h3>
+        </div>
+      </div>
+
+      <div class="three column row">
+        <div class="column field">
+          <label for="marcaCarro">Marca</label>
+          <select class="ui fluid search selection dropdown" name="marcaCarro" [(ngModel)]="seguro.marcaCarro">
+            <option [ngValue]="undefined">Selecione uma marca</option>
+            <option *ngFor="let m of marcasCarro$ | async" [ngValue]="m">
+              {{ m.nome }}
+            </option>
+          </select>
+        </div>
+
+        <div class="column field">
+          <label for="modeloCarro">Modelo</label>
+          <input type="text" id="modeloCarro" name="modeloCarro"
+            placeholder="Ex: Civic" [(ngModel)]="seguro.modeloCarro"/>
+        </div>
+
+        <div class="column field">
+          <label for="placaCarro">Placa</label>
+          <input type="text" id="placaCarro" name="placaCarro"
+            placeholder="ABC-1234" [(ngModel)]="seguro.placaCarro"/>
+        </div>
+      </div>
+
+      <div class="column row">
+        <div class="column">
+          <h3 class="ui dividing header">Dados do Proprietário</h3>
+        </div>
+      </div>
+
+      <div class="three column row">
+        <div class="column field">
+          <label for="nomeProprietario">Nome</label>
+          <input type="text" id="nomeProprietario" name="nomeProprietario"
+            placeholder="Nome" [(ngModel)]="seguro.nomeProprietario" />
+        </div>
+
+        <div class="column field">
+          <label for="sobrenomeProprietario">Sobrenome</label>
+          <input type="text" id="sobrenomeProprietario" name="sobrenomeProprietario"
+            placeholder="Sobrenome" [(ngModel)]="seguro.sobrenomeProprietario" />
+        </div>
+
+        <div class="column field">
+          <label for="dataNascimentoProprietario">Data de Nascimento</label>
+          <input type="date" id="dataNascimentoProprietario" name="dataNascimentoProprietario"
+            [(ngModel)]="seguro.dataNascimentoProprietario" />
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="extra content">
+    <div class="ui grid">
+      <div class="eight wide column notification-button-section">
+        <button class="ui button" (click)="enviarNotificacao()">
+          <i class="bell icon"></i> Enviar notificação
+        </button>
+      </div>
+      <div class="eight wide column">
+        <button class="ui positive right floated button" (click)="adicionar()">
+          <i class="save icon"></i> Salvar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+/* src/app/app.component.css */
+.main-content {
+    margin: 40px auto; /* Aumenta o espaço entre o menu e o card */
+    max-width: 1000px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center; /* Centraliza o card horizontalmente */
+}
+
+/* Se você estiver usando o MenuComponent, garanta que ele tenha um fundo ou margem */
+app-menu {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}

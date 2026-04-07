@@ -1,0 +1,36 @@
+<div class="ui card lista-seguros" style="margin: 20px; padding: 20px;">
+  <div class="content">
+    <h2 class="header">Lista de Seguros</h2>
+  </div>
+
+  <div class="content">
+    <ng-container *ngIf="seguros$ | async as seguros; else carregando">
+      
+      <div *ngIf="seguros.length > 0; else semSeguros">
+        <div *ngFor="let seguro of seguros" class="claim-row" style="padding: 10px; border-bottom: 1px solid #ddd;">
+          <div>
+            <strong>Veículo:</strong> {{ seguro.marcaCarro?.nome }} - {{ seguro.modeloCarro }}
+          </div>
+          <div>
+            <strong>Placa:</strong> {{ seguro.placaCarro }}
+          </div>
+          <div>
+            <strong>Proprietário:</strong> {{ seguro.nomeProprietario }} {{ seguro.sobrenomeProprietario }}
+          </div>
+        </div>
+      </div>
+
+    </ng-container>
+
+    <ng-template #carregando>
+      <div class="ui active inline loader"></div>
+      <p>Buscando dados no servidor...</p>
+    </ng-template>
+
+    <ng-template #semSeguros>
+      <div class="ui warning message">
+        Nenhum seguro cadastrado no sistema.
+      </div>
+    </ng-template>
+  </div>
+</div>
