@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MarcaCarro } from './marca-carro';
+import { OnlineOffline } from './online-offline';
 
-describe('MarcaCarro', () => {
-  let service: MarcaCarro;
+describe('OnlineOffline', () => {
+  let service: OnlineOffline;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MarcaCarro);
+    service = TestBed.inject(OnlineOffline);
   });
 
   it('should be created', () => {
